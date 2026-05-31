@@ -2,23 +2,24 @@
 //step2: implement a function that can handle different types of parameters and return values based on the function signature
 //step3: calling the function
 
+//Example 1: Overloaded function with different parameter types and return types
 /* function calculate(a: number, b: number): number;
-function calculate(a: string, b: string): string;
+function calculate(a: string, b: string): string; 
 
 //step2: write the implementation for the overloaded function
 function calculate(a: number | string, b: number | string): number | string {
     if (typeof a === "number" && typeof b === "number") {
-        return a + b; // If both parameters are numbers, return their sum
+        return (a + b)*2; // If both parameters are numbers, return their sum doubled
     } else if (typeof a === "string" && typeof b === "string") {
-        return a + " " + b; // If both parameters are strings, concatenate them with a space
+        return a.toUpperCase() + " " + b; // If both parameters are strings, concatenate them with a space
     } else {
         throw new Error("Invalid arguments. Both parameters must be of the same type.");
     }
 }
 
 // Example usage:
-console.log(calculate(5, 10)); // Output: 15
-console.log(calculate("Hello", "World")); // Output: Hello World    
+console.log(calculate(5, 10)); // Output: 30
+console.log(calculate("Hello", "World")); // Output: HELLO World    
  */
 
 //Example2:
@@ -43,7 +44,7 @@ console.log(info("Alice")); // Output: Name: Alice */
 
 //Example 3: Overloaded function with differeent number of parameters
 // signature for the overloaded function
-function add(a: number, b: number): number;
+/* function add(a: number, b: number): number;
 function add(a: number, b: number, c: number): number;
 
 // Implementation for the overloaded function
@@ -58,3 +59,28 @@ function add(a: number, b: number, c?: number): number {
 // Example usage:
 console.log(add(5, 10)); // Output: 15
 console.log(add(5, 10, 15)); // Output: 30      
+ */
+
+//Example 4;
+
+function personDetails(name:string):string;
+function personDetails(age:number):number;
+function personDetails(ismarried:boolean):string;
+//Implementation
+function personDetails(spec:string|number|boolean):number|string{
+    if(typeof spec === "string"){
+        return `you are ${spec}`;
+    }
+    else if(typeof spec === "number"){
+     return `you are ${spec} years old`;
+    }
+    else{
+        return spec?"married":"single";
+    }
+}
+console.log(personDetails("Rahul"));
+console.log(personDetails(30));
+console.log(personDetails(true));
+
+//Typescript doesn't allow overloads with identical parameter types but different return types
+

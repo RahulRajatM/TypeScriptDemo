@@ -64,3 +64,6 @@ greetWithDefault("Charlie"); // Output: Hello, Charlie!
 greetWithDefault("Dave", "Hi"); // Output: Hi, Dave!
 
 // In this example, the `greetWithDefault` function is an arrow function that takes a `name` parameter and a `greeting` parameter with a default value of "Hello". If the caller does not provide a greeting, it will use the default value. Arrow functions can also handle default parameters, allowing for more flexible function definitions.   
+
+
+

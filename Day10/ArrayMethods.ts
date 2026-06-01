@@ -135,3 +135,43 @@ fruits.forEach(fruit => console.log(fruit)); // Output: cherry, grapes, guava, o
 fruits.forEach((fruit, index)=>console.log(fruit+"-"+index));
 
 fruits.forEach(fruit=>console.log(fruit.toUpperCase()));
+
+//17. reduce()- executes a reducer function on each element of the array, resulting in a single output value
+//syntax: array.reduce(function(accumulator, currentValue, index, array){}, initialValue)
+//accumulator: The accumulator accumulates the callback's return values; it is the accumulated value previously returned in the last invocation of the callback, or initialValue, if supplied.
+//currentValue: The current element being processed in the array.
+//index(optional): The index of the current element being processed in the array.
+//array(optional): The array reduce() was called upon.
+//initialValue(optional): A value to use as the first argument to the first call of the callback. If no initialValue is supplied, the first element in the array will be used and skipped. Calling reduce() on an empty array without an initialValue will throw a TypeError.
+
+let sumOfNumbers= numbers.reduce((total, num) => total+num, 0); // 0 is default value of total, if we do not provide 0 then the first element of the array will be considered as the initial value of total and the iteration will start from the second element of the array. 
+console.log(sumOfNumbers); // Output: 28 (sum of all numbers in the array)
+
+let longestFruit= fruits.reduce((longest, fruit) => {
+    return fruit.length > longest.length ? fruit : longest;
+}, "");
+console.log(longestFruit); // Output: "orange" (the longest fruit name in the array)  
+
+//18. some()- tests whether at least one element in the array passes the test implemented by the provided function. It returns a Boolean value.
+//syntax: array.some(function(element, index, array){})
+//element: The current element being processed in the array.
+//index(optional): The index of the current element being processed in the array.
+//array(optional): The array some() was called upon.
+
+let hasEvenNumber= numbers.some(num => num%2==0);
+console.log("Does the array have an even number? "+hasEvenNumber); // Output: true
+
+let hasFruitWithZ= fruits.some(fruit => fruit.includes('z'));
+console.log("Is there any fruit with 'z' in its name? "+hasFruitWithZ); // Output: false    
+
+//19. every()- tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value.
+//syntax: array.every(function(element, index, array){})
+//element: The current element being processed in the array.
+//index(optional): The index of the current element being processed in the array.
+//array(optional): The array every() was called upon.
+
+let areAllEven= numbers.every(num => num%2==0);
+console.log("Are all numbers even? "+areAllEven); // Output: false
+
+let areAllFruitsWithP= fruits.every(fruit => fruit.includes('p'));
+console.log("Do all fruits have 'p' in their name? "+areAllFruitsWithP); // Output: false       

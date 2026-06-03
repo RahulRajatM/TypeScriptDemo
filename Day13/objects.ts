@@ -75,7 +75,7 @@ console.log("modified job is: ", employee.job);
 //2. Inline Type object- we also define the datatype of the keys (TS)
 
 // Problem with inline type object is that we have to repeat the same structure for every object we create. To avoid this repetition, we can use type aliases or classes to define a reusable structure for our objects.
-
+/*
 let student1: {
     name:string,
     age:number,
@@ -104,10 +104,10 @@ let student2: {
     getSummary() { return `Welcome ${this.name}, your age is ${this.age} and your grade is ${this.grade}`; }
 }
 console.log(student2.getSummary()); //Welcome Annu, your age is 27 and your grade is E
-
+*/
 
 //3. using type aliases (JS/TS) : ALLOWS CREATING A NEW NAME FOR AN EXISTING TYPE. IT CAN BE USED TO SIMPLIFY COMPLEX TYPES OR TO CREATE MORE DESCRIPTIVE NAMES FOR TYPES. TYPE ALIASES ARE DEFINED USING THE `type` KEYWORD FOLLOWED BY THE NEW NAME AND THE TYPE DEFINITION. HERE'S AN EXAMPLE OF USING TYPE ALIASES IN TYPESCRIPT:
-type Student = {
+/*type Student = {
     name:string,
     age:number,
     grade:string,
@@ -129,7 +129,7 @@ let student4: Student = {
     getSummary() { return `Welcome ${this.name}, your age is ${this.age} and your grade is ${this.grade}`; }
 }
 console.log(student4.getSummary()); //Welcome Rohit, your age is 28 and your grade is B
-
+*/
 // In this example, we defined a type alias called `Student` that represents the structure of a student object. We then created two student objects, `student3` and `student4`, using the `Student` type alias. This allows us to avoid repeating the same structure for each student object and provides better readability and maintainability for our code. Type aliases are a powerful feature in TypeScript that can help simplify complex types and make our code more expressive.    
 
 type product={
@@ -194,7 +194,7 @@ console.log(`Team Lead Name: ${teamLead1.name}, Salary: ${teamLead1.salary}, Dep
 /*======================================================================================================*/
 
 //4. Using the classes (JS ES16/TS)
-class Person {
+/*class Person {
     firstName: string;
     lastName: string;
     age: number;
@@ -223,3 +223,4 @@ let person2 = new Person("Ramesh", 'Kumar', 28, "Bangalore");
 console.log(person2.getSummary()); //Welcome Ramesh Kumar, your age is 28 and your place is Bangalore
 
 // In this example, we defined a class called `Person` with properties such as `firstName`, `lastName`, `age`, and `place`, as well as methods like `getFullname` and `getSummary`. We then created two instances of the `Person` class, `person1` and `person2`, using the `new` keyword. The class provides a blueprint for creating objects with specific properties and behaviors, allowing us to create multiple instances of the class with different values for the properties. Classes are a fundamental feature of object-oriented programming in TypeScript and provide a powerful way to structure and organize code.    
+*/
